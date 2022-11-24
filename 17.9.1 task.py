@@ -5,21 +5,22 @@ user_number = int(input("Введите любое число: "))
 def is_int(str):
     str = str.replace(' ', '')
     str = str.replace('-', '')
+
     try:
         int(str)
         return True
     except ValueError:
         return False
 
-
 if " " not in numbers:
-    print("\nВ ВВОДЕ ОТСУТСТВУЮТ ПРОБЕЛЫ (введите числа через пробел.)")
+    print("\nВ ВВОДЕ ОТСУТСТВУЮТ ПРОБЕЛЫ (введите числа через пробел)")
     numbers = input("Введите числа через пробел: ")
     exit(1)
 
 if not is_int(numbers):
-    print('\nВведите целые числа, согласно условиям ввода.\n')
+    print('\nВведите числа, согласно условиям ввода.\n')
     exit(1)
+
 else:
     numbers = numbers.split()
 
@@ -91,7 +92,7 @@ if not binary_search(list_numbers, user_number, 0, len(list_numbers)):
         print(f'''В списке нет введенного числа
 Ближайшее число больше введенного: {rI}, его индекс: {list_numbers.index(rI)}
 Ближайшее число меньше введенного: {list_numbers[min_ind]} его индекс: {min_ind}''')
-    elif list_sequence_numbers.index(rI) == 0:
+    elif list_numbers.index(rI) == 0:
         print(f'Индекс введенного числа: {list_numbers.index(rI)}')
 else:
     print(f'Индекс введенного элемента: {binary_search(list_numbers, user_number, 0, len(list_numbers))}')
